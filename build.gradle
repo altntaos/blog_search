@@ -1,0 +1,92 @@
+buildscript {
+    ext{
+        springBootVersion = '3.0.4'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath "io.spring.gradle:dependency-management-plugin:1.1.0"
+    }
+}
+
+allprojects {
+    group 'com.mspark.blogsearch'
+    version '0.0.1-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    sourceCompatibility = '17'
+    targetCompatibility = '17'
+    compileJava.options.encoding = 'UTF-8'
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    ext['junit-jupiter.version'] = '5.8.2'
+
+    dependencies {
+        runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+
+        compileOnly 'org.projectlombok:lombok'
+
+        implementation 'org.springframework.boot:spring-boot-starter-validation:2.3.4.RELEASE'
+        implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+        annotationProcessor 'org.projectlombok:lombok'
+        annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+        testImplementation('org.springframework.boot:spring-boot-starter-test') {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+
+
+        testImplementation 'com.squareup.okhttp3:okhttp'
+        testImplementation 'com.squareup.okhttp3:mockwebserver'
+        testImplementation 'io.projectreactor:reactor-test'
+        testImplementation 'org.junit.jupiter:junit-jupiter'
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+    }
+
+    tasks.named('test') {
+        useJUnitPlatform()
+    }
+
+}
+
+
+project(':external'){
+    dependencies {
+    }
+}
+
+project(':api'){
+    dependencies {
+        implementation 'com.h2database:h2'
+        implementation 'io.r2dbc:r2dbc-h2'
+        implementation 'it.ozimov:embedded-redis:0.7.2'
+
+        implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+        implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
+
+        testImplementation 'io.r2dbc:r2dbc-h2'
+    }
+}

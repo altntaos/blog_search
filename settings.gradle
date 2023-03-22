@@ -1,0 +1,4 @@
+rootProject.name = 'blog_search'
+include 'external'
+include 'api'
+
