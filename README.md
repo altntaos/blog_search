@@ -140,4 +140,7 @@ java -jar external-0.0.1-SNAPSHOT.jar
     }
 ]
 ```
+## 파일 다운로드경로
+* https://drive.google.com/file/d/1-rlwcVJLiA5VY3kwq5V-Jl5RhzkK5Xxv/view?usp=sharing
+* https://drive.google.com/file/d/18PLRI9ugkBhMPwS64-OpDFwfRY7pGvtM/view?usp=sharing
 
