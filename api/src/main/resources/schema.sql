@@ -14,3 +14,30 @@ CREATE TABLE keyword_history (
     searching_date timestamp,
     PRIMARY KEY (id)
 );
+
+INSERT INTO keyword (keyword) values ('계란찜 만들기');
+INSERT INTO keyword (keyword) values ('자동차');
+INSERT INTO keyword (keyword) values ('통영숙소');
+INSERT INTO keyword (keyword) values ('국내 벛꽃여행지 추천');
+INSERT INTO keyword (keyword) values ('정자역 맛집 추천');
+
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '계란찜 만들기'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '계란찜 만들기'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '자동차'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '자동차'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '자동차'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '자동차'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '통영숙소'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '통영숙소'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '통영숙소'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '통영숙소'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '통영숙소'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '국내 벛꽃여행지 추천'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '국내 벛꽃여행지 추천'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '국내 벛꽃여행지 추천'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '국내 벛꽃여행지 추천'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '국내 벛꽃여행지 추천'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '국내 벛꽃여행지 추천'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '국내 벛꽃여행지 추천'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '국내 벛꽃여행지 추천'), now());
+INSERT INTO keyword_history (keyword_id, searching_date) values ((select id from keyword where keyword = '정자역 맛집 추천'), now());

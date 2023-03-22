@@ -32,12 +32,12 @@ public class BlogSearchController {
         @RequestParam(required = false, defaultValue = "1") Integer page,
         @RequestParam(required = false, defaultValue = "10") Integer size) {
 
-        if(page > 50){
-            throw new InvalidSearchQueryParamException(ResultCode.INVALID_PARAM, "page", "page must not be greater then 50");
+        if(page > 50 || page < 1){
+            throw new InvalidSearchQueryParamException(ResultCode.INVALID_PARAM, "page", "page must be between 1 and 50");
         }
 
-        if(size > 50){
-            throw new InvalidSearchQueryParamException(ResultCode.INVALID_PARAM, "page", "page must not be greater then 50");
+        if(size > 50 || size < 1){
+            throw new InvalidSearchQueryParamException(ResultCode.INVALID_PARAM, "size", "size must be between 1 and 50");
         }
 
         return blogSearchService.search(query, sort, page, size).map(ResponseEntity::ok);

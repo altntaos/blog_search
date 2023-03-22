@@ -94,6 +94,8 @@ public class KeywordServiceTest {
 
         keywordService.getRanks(5).as(StepVerifier::create).expectNext(expectedKeywordRank5).verifyComplete();
 
+        //delete test data
+        reactiveRedisTemplate.opsForZSet().delete(KEYWORD_SCORE_KEY).block();
     }
 
 }

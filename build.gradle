@@ -34,6 +34,10 @@ subprojects {
         }
     }
 
+    ext {
+        multipleBuildDir = file(rootProject.buildDir)
+    }
+
     repositories {
         mavenCentral()
     }
@@ -89,4 +93,8 @@ project(':api'){
 
         testImplementation 'io.r2dbc:r2dbc-h2'
     }
+}
+
+task multipleBootJar {
+    dependsOn([':api:bootJar', ':external:bootJar' ])
 }
