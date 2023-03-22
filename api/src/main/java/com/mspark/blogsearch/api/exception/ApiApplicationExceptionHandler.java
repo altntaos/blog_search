@@ -36,6 +36,15 @@ public class ApiApplicationExceptionHandler {
         return Mono.just(ResponseEntity.badRequest().body(errMessage));
     }
 
+    @ExceptionHandler(InvalidQueryParamException.class)
+    @ResponseBody
+    public Mono<ResponseEntity> handleInvalidQueryParamException(InvalidQueryParamException e) {
+        String errMessage = e.getMessage();
+        log.warn("msg = {}", errMessage);
+
+        return Mono.just(ResponseEntity.badRequest().body(errMessage));
+    }
+
     @ExceptionHandler(ApiException.class)
     @ResponseBody
     public Mono<ResponseEntity> handleApiException(ApiException e) {

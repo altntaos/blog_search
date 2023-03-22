@@ -10,7 +10,7 @@ import lombok.Getter;
 @Getter
 public enum ResultCode {
 
-    OK(1000, "OK"),API_ERROR (2000, "API_ERROR");
+    OK(1000, "OK"),API_ERROR (2000, "API_ERROR"), INVALID_PARAM(3000, "INVALID_PARAM");
 
     private int code;
     private String description;

@@ -2,6 +2,8 @@ package com.mspark.blogsearch.api.controller;
 
 import com.mspark.blogsearch.api.dto.req.KeywordSaveRequest;
 import com.mspark.blogsearch.api.dto.res.KeywordResponse;
+import com.mspark.blogsearch.api.enums.ResultCode;
+import com.mspark.blogsearch.api.exception.InvalidQueryParamException;
 import com.mspark.blogsearch.api.service.KeywordService;
 import jakarta.validation.Valid;
 import java.util.List;
@@ -34,6 +36,9 @@ public class KeywordController {
 
     @GetMapping("/ranks")
     public Mono<ResponseEntity<List<KeywordResponse>>> ranks(@RequestParam(required = false, defaultValue = "10") Integer size){
+        if(size > 10 || size < 1){
+            throw new InvalidQueryParamException(ResultCode.INVALID_PARAM, "size must be between 1 and 10");
+        }
         return keywordService.getRanks(size).map(ResponseEntity::ok);
     }
 

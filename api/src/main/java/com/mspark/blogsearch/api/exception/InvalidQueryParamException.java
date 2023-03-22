@@ -6,17 +6,16 @@ import lombok.AllArgsConstructor;
 /**
  * @author : altntaos@gmail.com
  * @Date : 2023/03/22
- * @Time : 11:18
+ * @Time : 18:59
  */
 @AllArgsConstructor
-public class ApiRedisException extends ApiException{
+public class InvalidQueryParamException extends ApiException{
 
     private ResultCode resultCode;
     private String msg;
-    private String key;
 
     @Override
     public String getMessage() {
-        return "[ApiDatabaseException > code : " + resultCode.getCode()+", targetKey : " + key + ", msg : " + msg +"]";
+        return "[InvalidQueryParamException > code : " + resultCode.getCode() + ", msg : " +msg +"]";
     }
 }

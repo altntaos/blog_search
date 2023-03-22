@@ -85,6 +85,12 @@ public class KeywordControllerTest {
             .exchange()
             .expectStatus().isOk()
             .expectBody(List.class).isEqualTo(ranks10);
+
+        //Call with param 'size' greater then 10
+        webTestClient.get()
+            .uri(uriBuilder -> uriBuilder.path(ranksPath).queryParam("size", 11).build())
+            .exchange()
+            .expectStatus().isBadRequest();
     }
 
 }
