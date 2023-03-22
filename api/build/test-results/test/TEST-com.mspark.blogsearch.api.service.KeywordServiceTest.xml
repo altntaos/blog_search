@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.mspark.blogsearch.api.service.KeywordServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-22T04:46:59" hostname="NHNui-MacBookPro.local" time="1.031">
+  <properties/>
+  <testcase name="저장되어 있는 검색어 순위를 사이즈에 맞게 리턴한다" classname="com.mspark.blogsearch.api.service.KeywordServiceTest" time="1.031"/>
+  <system-out><![CDATA[13:46:55.845 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [KeywordServiceTest]: using SpringBootContextLoader
+13:46:55.849 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.mspark.blogsearch.api.service.KeywordServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+13:46:55.850 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mspark.blogsearch.api.service.KeywordServiceTest]: KeywordServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:46:55.890 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [KeywordServiceTest]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, WebTestClientContextCustomizer]
+13:46:55.980 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/nhn/Documents/myapp/blog_search/api/build/classes/java/main/com/mspark/blogsearch/api/ApiApplication.class]
+13:46:55.981 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mspark.blogsearch.api.ApiApplication for test class com.mspark.blogsearch.api.service.KeywordServiceTest
+13:46:56.077 [Test worker] DEBUG org.springframework.test.context.util.TestContextSpringFactoriesUtils - Skipping candidate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: [jakarta.servlet.ServletContext]
+13:46:56.091 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [KeywordServiceTest]: [DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+13:46:56.097 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [KeywordServiceTest], class annotated with @DirtiesContext [false] with mode [null]
+13:46:56.109 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.mspark.blogsearch.api.service.KeywordServiceTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.4)
+
+2023-03-22T13:46:56.501+09:00  INFO 2018 --- [    Test worker] c.m.b.api.service.KeywordServiceTest     : Starting KeywordServiceTest using Java 17.0.6 with PID 2018 (started by nhn in /Users/nhn/Documents/myapp/blog_search/api)
+2023-03-22T13:46:56.503+09:00  INFO 2018 --- [    Test worker] c.m.b.api.service.KeywordServiceTest     : No active profile set, falling back to 1 default profile: "default"
+2023-03-22T13:46:57.048+09:00  INFO 2018 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-22T13:46:57.049+09:00  INFO 2018 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2023-03-22T13:46:57.059+09:00  INFO 2018 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 R2DBC repository interfaces.
+2023-03-22T13:46:57.200+09:00  INFO 2018 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-22T13:46:57.200+09:00  INFO 2018 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2023-03-22T13:46:57.298+09:00  INFO 2018 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97 ms. Found 2 R2DBC repository interfaces.
+2023-03-22T13:46:57.310+09:00  INFO 2018 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-22T13:46:57.311+09:00  INFO 2018 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-03-22T13:46:57.328+09:00  INFO 2018 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.mspark.blogsearch.api.domain.repository.KeywordHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-22T13:46:57.329+09:00  INFO 2018 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.mspark.blogsearch.api.domain.repository.KeywordRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-03-22T13:46:57.329+09:00  INFO 2018 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2023-03-22T13:46:59.193+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Request:  CALL H2VERSION()
+2023-03-22T13:46:59.195+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Response: org.h2.result.LocalResult@b6a046e9 columns: 1 rows: 1 pos: -1
+2023-03-22T13:46:59.205+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Request:  SELECT CURRENT_TIMESTAMP
+2023-03-22T13:46:59.206+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Response: org.h2.result.LocalResult@bb627dd2 columns: 1 rows: 1 pos: -1
+2023-03-22T13:46:59.237+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Request:  CALL H2VERSION()
+2023-03-22T13:46:59.238+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Response: org.h2.result.LocalResult@9fb8cd3a columns: 1 rows: 1 pos: -1
+2023-03-22T13:46:59.239+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Request:  CALL H2VERSION()
+2023-03-22T13:46:59.240+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Response: org.h2.result.LocalResult@57c64fa3 columns: 1 rows: 1 pos: -1
+2023-03-22T13:46:59.240+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Request:  CALL H2VERSION()
+2023-03-22T13:46:59.241+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Response: org.h2.result.LocalResult@920627a5 columns: 1 rows: 1 pos: -1
+2023-03-22T13:46:59.241+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Request:  CALL H2VERSION()
+2023-03-22T13:46:59.242+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Response: org.h2.result.LocalResult@4e5e0fb0 columns: 1 rows: 1 pos: -1
+2023-03-22T13:46:59.242+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Request:  CALL H2VERSION()
+2023-03-22T13:46:59.243+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Response: org.h2.result.LocalResult@d54eccb2 columns: 1 rows: 1 pos: -1
+2023-03-22T13:46:59.243+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Request:  CALL H2VERSION()
+2023-03-22T13:46:59.244+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Response: org.h2.result.LocalResult@cb9740cb columns: 1 rows: 1 pos: -1
+2023-03-22T13:46:59.244+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Request:  CALL H2VERSION()
+2023-03-22T13:46:59.245+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Response: org.h2.result.LocalResult@27b9777e columns: 1 rows: 1 pos: -1
+2023-03-22T13:46:59.245+09:00 DEBUG 2018 --- [      Thread-10] io.r2dbc.h2.client.SessionClient         : Request:  DROP TABLE IF EXISTS keyword
+2023-03-22T13:46:59.245+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Request:  CALL H2VERSION()
+2023-03-22T13:46:59.246+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Response: org.h2.result.LocalResult@4d293434 columns: 1 rows: 1 pos: -1
+2023-03-22T13:46:59.248+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Request:  CALL H2VERSION()
+2023-03-22T13:46:59.248+09:00 DEBUG 2018 --- [    Test worker] io.r2dbc.h2.client.SessionClient         : Response: org.h2.result.LocalResult@8c40a845 columns: 1 rows: 1 pos: -1
+2023-03-22T13:46:59.248+09:00 DEBUG 2018 --- [      Thread-10] io.r2dbc.h2.client.SessionClient         : Request:  DROP TABLE IF EXISTS keyword_history
+2023-03-22T13:46:59.252+09:00 DEBUG 2018 --- [      Thread-10] io.r2dbc.h2.client.SessionClient         : Request:  CREATE TABLE keyword ( id bigint generated by default as identity, keyword VARCHAR(255) NOT NULL , PRIMARY KEY (id), UNIQUE (keyword) )
+2023-03-22T13:46:59.258+09:00 DEBUG 2018 --- [      Thread-10] io.r2dbc.h2.client.SessionClient         : Request:  CREATE TABLE keyword_history ( id bigint generated by default as identity, keyword_id bigint NOT NULL , searching_date timestamp, PRIMARY KEY (id) )
+2023-03-22T13:46:59.262+09:00 DEBUG 2018 --- [      Thread-10] io.r2dbc.h2.client.SessionClient         : Request:  SELECT CURRENT_TIMESTAMP
+2023-03-22T13:46:59.263+09:00 DEBUG 2018 --- [      Thread-10] io.r2dbc.h2.client.SessionClient         : Response: org.h2.result.LocalResult@8bfa86d7 columns: 1 rows: 1 pos: -1
+2023-03-22T13:46:59.315+09:00  INFO 2018 --- [    Test worker] c.m.b.api.service.KeywordServiceTest     : Started KeywordServiceTest in 3.172 seconds (process running for 5.881)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
